@@ -1,0 +1,8 @@
+[user]
+	name = Alw3ys
+	email = alw3ys@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = nano
+[init]
+	defaultBranch = main
