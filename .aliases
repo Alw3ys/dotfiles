@@ -3,3 +3,7 @@
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+#alias aws="docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli"
+alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powershell"
+
+alias eatngo-sql="docker run -d -p 5432:5432 -e POSTGRES_HOST_AUTH_METHOD=trust -v eatngo-postgres:/var/lib/postgresql/data --name eatngo_postgres postgres"
