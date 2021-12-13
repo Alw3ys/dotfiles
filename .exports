@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Make nano the default editor.
+export EDITOR='nano';
+
+
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1;
