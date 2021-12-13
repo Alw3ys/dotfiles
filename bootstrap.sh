@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# Set default shell to bash
-chsh -s /bin/bash
+# Do this maybe: https://github.com/mathiasbynens/dotfiles/blob/main/bootstrap.sh
 
-gem install cocoapods
+# Set default shell to bash
+#chsh -s /bin/bash
+
+#gem install cocoapods
