@@ -1,0 +1,5 @@
+Canon Printer/Airplay | 192.168.1.97
+Sonos Bedroom         | 192.168.1.75
+Sonos Diningroom      | 192.168.1.232
+Sonos Livingroom      | 192.168.1.252
+Sonos Bathroom        | 192.168.1.253
