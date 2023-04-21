@@ -17,3 +17,4 @@ alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powersh
 
 # IDEs
 alias webstorm='open -na "WebStorm.app" --args "$@"'
+alias pycharm='open -na "PyCharm CE.app" --args "$@"'
