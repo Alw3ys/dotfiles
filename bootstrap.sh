@@ -13,3 +13,4 @@ gem install cocoapods
 
 brew install python3
 
+curl -sSL https://install.python-poetry.org | python3 -
