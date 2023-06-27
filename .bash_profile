@@ -15,3 +15,5 @@ if [ -f '/Users/alvaromolina/Downloads/google-cloud-sdk/path.bash.inc' ]; then .
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/alvaromolina/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/alvaromolina/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+export PATH="/Users/alw3ys/.local/bin:$PATH"
