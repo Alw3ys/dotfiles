@@ -5,8 +5,11 @@
 # Set default shell to bash
 chsh -s /bin/bash
 
+echo 'set completion-ignore-case On' >> /etc/inputrc
+
 gem install cocoapods
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo 'set completion-ignore-case On' >> /etc/inputrc
+brew install python3
+
