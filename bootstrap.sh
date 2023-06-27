@@ -7,4 +7,6 @@ chsh -s /bin/bash
 
 gem install cocoapods
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 echo 'set completion-ignore-case On' >> /etc/inputrc
