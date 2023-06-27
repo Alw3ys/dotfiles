@@ -6,3 +6,5 @@
 #chsh -s /bin/bash
 
 #gem install cocoapods
+
+echo 'set completion-ignore-case On' >> /etc/inputrc
