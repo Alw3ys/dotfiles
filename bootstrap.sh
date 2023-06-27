@@ -3,8 +3,8 @@
 # Do this maybe: https://github.com/mathiasbynens/dotfiles/blob/main/bootstrap.sh
 
 # Set default shell to bash
-#chsh -s /bin/bash
+chsh -s /bin/bash
 
-#gem install cocoapods
+gem install cocoapods
 
 echo 'set completion-ignore-case On' >> /etc/inputrc
