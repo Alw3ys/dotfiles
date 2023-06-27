@@ -16,3 +16,7 @@ brew install python3
 curl -sSL https://install.python-poetry.org | python3 -
 
 brew install nvm
+
+nvm install 18.16.1
+
+npm install --global yarn
