@@ -19,15 +19,16 @@ alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powersh
 alias webstorm='open -na "WebStorm.app" --args "$@"'
 alias pycharm='open -na "PyCharm CE.app" --args "$@"'
 
-# clients stuff
-alias anythingnew="kubectl get deployments --sort-by=.metadata.creationTimestamp"
-
 # Git
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push origin HEAD"
 alias gpd="git pull origin main"
 alias gl="git log"
+alias gs="git status"
 
 # Docker
 alias dup="docker compose up"
+
+# my stuff
+alias anythingnew="kubectl get deployments --sort-by=.metadata.creationTimestamp"
