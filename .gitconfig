@@ -3,6 +3,6 @@
 	email = alw3ys@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-	editor = nano
+	editor = vim
 [init]
 	defaultBranch = main
