@@ -26,6 +26,7 @@ alias gp="git push origin HEAD"
 alias gpd="git pull origin main"
 alias gl="git log"
 alias gs="git status"
+alias gd="git diff"
 
 function open_git_repo() {
     local url=$(git remote get-url origin | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/.git$//')
