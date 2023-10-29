@@ -38,6 +38,11 @@ alias opengit='open_git_repo'
 alias on="hueadm group 7 on"
 alias off="hueadm group 7 off"
 
+set_brightness_function() {
+  hueadm group 7 =$1%
+}
+alias dimme='set_brightness_function'
+
 # Docker
 alias dup="docker compose up"
 
