@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+#alias aws="docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli"
+alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powershell"
+
+# IDEs
+alias webstorm='open -na "WebStorm.app" --args "$@"'
+alias pycharm='open -na "PyCharm CE.app" --args "$@"'
+alias rustrover='open -na "RustRover 2023.3 EAP.app" --args "$@"'
+
+# clients stuff
+alias anythingnew="kubectl get deployments --sort-by=.metadata.creationTimestamp"
+
+# example
+alias dev-dctl="$HOME/Documents/dosei/dosei/target/debug/dctl"
+
+# Git
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push origin HEAD"
+alias gpd="git pull origin main"
+alias gl="git log"
+alias gs="git status"
+alias gd="git diff"
+
+function open_repo() {
+    local url=$(git remote get-url origin | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/.git$//')
+    open $url
+}
+
+alias opengit='open_repo'
+
+# Lights
+alias on="hueadm group 7 on"
+alias off="hueadm group 7 off"
+
+set_brightness_function() {
+  hueadm group 7 =$1%
+}
+alias dimme='set_brightness_function'
+
+# Docker
+alias dup="docker compose up"
