@@ -13,6 +13,7 @@ brew install nvm
 brew install watch
 
 brew install awscli
+brew install --cask aws-vault
 
 brew install pulumi/tap/pulumi
 
