@@ -1,0 +1,9 @@
+[user]
+	name = Alw3ys
+	email = alw3ys@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[init]
+	defaultBranch = main
+
