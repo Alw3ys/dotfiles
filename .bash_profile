@@ -8,3 +8,7 @@ for file in ~/.{exports,aliases,functions,extra}; do
 done;
 unset file;
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PATH="/Users/alvaromolina/.local/bin:$PATH"
+
