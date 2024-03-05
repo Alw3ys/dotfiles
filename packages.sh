@@ -13,3 +13,7 @@ brew install nvm
 brew install watch
 
 brew install pulumi/tap/pulumi
+
+# Remove outdated versions from the cellar.
+brew cleanup
+
