@@ -12,6 +12,8 @@ brew install nvm
 
 brew install watch
 
+brew install awscli
+
 brew install pulumi/tap/pulumi
 
 # Remove outdated versions from the cellar.
