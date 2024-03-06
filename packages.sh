@@ -13,6 +13,8 @@ curl -sSL https://install.python-poetry.org | python3 -
 brew install node
 brew install nvm
 
+npm install -g hueadm
+
 brew install watch
 
 brew install awscli
