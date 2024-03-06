@@ -3,6 +3,11 @@
 # Set default shell to bash
 chsh -s /bin/bash
 
+# Set default screenshots path.
+SCREENSHOTS_PATH="~/Documents/screenshots"
+mkdir $SCREENSHOTS_PATH
+defaults write com.apple.screencapture location $SCREENSHOTS_PATH
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
