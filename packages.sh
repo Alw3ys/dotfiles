@@ -22,6 +22,7 @@ brew install --cask aws-vault
 
 brew install pulumi/tap/pulumi
 
+brew install jq
 # Remove outdated versions from the cellar.
 brew cleanup
 
