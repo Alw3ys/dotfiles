@@ -19,6 +19,7 @@ brew install watch
 
 brew install awscli
 brew install --cask aws-vault
+brew install --cask session-manager-plugin
 
 brew install pulumi/tap/pulumi
 
