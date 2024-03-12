@@ -27,3 +27,4 @@ brew install jq
 # Remove outdated versions from the cellar.
 brew cleanup
 
+gem install deb-s3

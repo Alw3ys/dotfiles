@@ -16,3 +16,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # sqlx-cli
 cargo install sqlx-cli --no-default-features --features native-tls,postgres
+
+# cargo-deb
+cargo install cargo-deb
