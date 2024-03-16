@@ -8,6 +8,9 @@ brew install protobuf
 # GPG
 brew install gpg
 
+# Neovim
+brew install neovim
+
 # Python
 brew install python3
 curl -sSL https://install.python-poetry.org | python3 -
