@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Teton
-alias athena="ssh teton@10.0.0.56"
-alias pc="ssh alvaro@10.0.0.22"
-alias jetson="ssh alw3ys@10.0.0.59"
-
