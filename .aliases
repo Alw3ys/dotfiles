@@ -53,6 +53,3 @@ alias dimme='set_brightness_function'
 
 # Docker
 alias dup="docker compose up"
-
-alias pc="ssh alvaro@10.0.0.22"
-alias jetson="ssh alw3ys@10.0.0.59"
