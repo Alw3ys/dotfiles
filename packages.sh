@@ -2,6 +2,8 @@
 
 brew install stow
 
+brew install cmake
+
 # Probuf
 brew install protobuf
 
