@@ -42,6 +42,23 @@ function open_repo() {
 
 alias opengit='open_repo'
 
+cleanup_branches() {
+    echo "The following local branches will be deleted (excluding 'main'):"
+    git branch | grep -v "main" | sed 's/^/  /'
+    
+    echo -e "\nAre you sure you want to delete these branches? (y/N): "
+    read -r response
+    
+    if [[ "$response" =~ ^[Yy]$ ]]; then
+        git branch | grep -v "main" | xargs git branch -D
+        echo "Branches deleted successfully."
+    else
+        echo "Operation cancelled."
+    fi
+}
+
+alias git_cleanup='cleanup_branches'
+
 # Lights
 alias on="hueadm group 7 on"
 alias off="hueadm group 7 off"
