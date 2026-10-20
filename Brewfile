@@ -14,6 +14,7 @@ cask "claude"
 cask "google-chrome"
 cask "slack"
 cask "discord"
+cask "tableplus"
 
 # Fonts
 cask "font-jetbrains-mono"
