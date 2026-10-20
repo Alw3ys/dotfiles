@@ -20,4 +20,7 @@ fi
 # Rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# Docker Desktop CLI tools (docker, docker-compose, kubectl)
+[ -d "$HOME/.docker/bin" ] && export PATH="$PATH:$HOME/.docker/bin"
+
 ulimit -n 10240
