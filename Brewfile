@@ -5,6 +5,7 @@
 brew "bash-completion"
 brew "gh"
 brew "jq"
+brew "node"
 
 # Apps
 cask "ghostty"
