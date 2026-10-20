@@ -16,6 +16,8 @@ step "Homebrew"
 if [ -x /opt/homebrew/bin/brew ]; then
   ok "installed"
 else
+  # The installer needs sudo; ask for the password up front so it can run unattended
+  sudo -v
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
