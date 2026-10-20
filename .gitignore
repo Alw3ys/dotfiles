@@ -3,3 +3,9 @@
 .idea
 
 .extra
+
+**/.claude/settings.local.json
+
+**/.claude/.cc-writes/
+
+.hueadm.json

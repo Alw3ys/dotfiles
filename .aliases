@@ -18,13 +18,13 @@ alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powersh
 # IDEs
 alias webstorm='open -na "WebStorm.app" --args "$@"'
 alias pycharm='open -na "PyCharm CE.app" --args "$@"'
-alias rustrover='open -na "RustRover 2023.3 EAP.app" --args "$@"'
+alias rustrover='open -na "RustRover.app" --args "$@"'
 
 # clients stuff
 alias anythingnew="kubectl get deployments --sort-by=.metadata.creationTimestamp"
 
 # example
-alias dev-dctl="$HOME/Documents/dosei/dosei/target/debug/dctl"
+alias d_dosei="$HOME/Documents/dosei/dosei/target/debug/dosei"
 
 # Git
 alias ga="git add"
@@ -56,8 +56,8 @@ cleanup_branches() {
         echo "Operation cancelled."
     fi
 }
+alias cleanupgit='cleanup_branches'
 
-alias git_cleanup='cleanup_branches'
 
 # Lights
 alias on="hueadm group 7 on"
@@ -70,3 +70,7 @@ alias dimme='set_brightness_function'
 
 # Docker
 alias dup="docker compose up"
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias st="ssh ubuntu@stridee.fit"
+alias s="ssh ubuntu@stridee.fit"

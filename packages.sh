@@ -23,6 +23,8 @@ brew install ruby
 # Node
 brew install node
 brew install nvm
+brew install oven-sh/bun/bun
+brew install pnpm
 
 npm install -g hueadm
 
@@ -35,6 +37,9 @@ brew install --cask session-manager-plugin
 brew install pulumi/tap/pulumi
 
 brew install jq
+
+# Fonts (used by Zed)
+brew install --cask font-jetbrains-mono
 # Remove outdated versions from the cellar.
 brew cleanup
 

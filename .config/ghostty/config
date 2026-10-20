@@ -1,0 +1,4 @@
+window-inherit-working-directory=true
+
+keybind = cmd+option+right=next_tab
+keybind = cmd+option+left=previous_tab

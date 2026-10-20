@@ -1,0 +1,63 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "disable_ai": true,
+  "cli_default_open_behavior": "new_window",
+  "theme": "One Dark",
+  "icon_theme": "Material Icon Theme",
+  "project_panel": {
+    "dock": "left",
+    "default_width": 260,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
+    "folder_icons": true,
+    "indent_size": 16,
+    "entry_spacing": "comfortable",
+    "scrollbar": { "show": "auto" },
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "terminal": {
+    "dock": "bottom",
+  },
+  "ssh_connections": [
+    {
+      "host": "10.0.0.22",
+      "username": "alvaro",
+      "projects": [
+        {
+          "paths": ["~/smith"],
+        },
+      ],
+    },
+  ],
+  "base_keymap": "JetBrains",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": false,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 14,
+  "buffer_font_features": { "calt": true },
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 15,
+}
