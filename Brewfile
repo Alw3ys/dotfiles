@@ -15,6 +15,7 @@ cask "google-chrome"
 cask "slack"
 cask "discord"
 cask "tableplus"
+cask "whatsapp"
 
 # Fonts
 cask "font-jetbrains-mono"
