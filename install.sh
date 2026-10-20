@@ -39,17 +39,6 @@ while IFS= read -r line; do
   esac
 done < <(grep -E '^(brew|cask) "' "$DOTFILES/Brewfile")
 
-step "Node (nvm)"
-export NVM_DIR="$HOME/.nvm"
-if [ ! -s "$NVM_DIR/nvm.sh" ]; then
-  curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | PROFILE=/dev/null bash
-fi
-set +u; . "$NVM_DIR/nvm.sh"
-if [ "$(nvm version default)" = "N/A" ]; then
-  nvm install --lts && nvm alias default 'lts/*'
-fi
-ok "node $(nvm version default)"; set -u
-
 step "Rust (rustup)"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 if command -v rustup >/dev/null; then

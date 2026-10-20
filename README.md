@@ -12,7 +12,7 @@ git clone https://github.com/Alw3ys/dotfiles.git ~/dotfiles && ~/dotfiles/instal
 
 ## Layout
 
-- `install.sh`: Homebrew, `Brewfile`, nvm/Node, rustup, Claude Code, links, macOS settings
+- `install.sh`: Homebrew, `Brewfile`, rustup, Claude Code, links, macOS settings
 - `Brewfile`: every Homebrew formula and cask
 - `home/`: every file here is symlinked to the same path under `~`
   (existing files are moved to `~/.dotfiles-backup/` first)
