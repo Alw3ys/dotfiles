@@ -51,11 +51,16 @@ else
 fi
 
 step "Cargo tools"
-# Not in Homebrew (cargo-watch's formula is disabled), so install with cargo into ~/.cargo/bin
-for tool in cargo-watch; do
-  if command -v "$tool" >/dev/null; then ok "$tool"
-  else cargo install --locked "$tool" && ok "$tool (installed)"; fi
-done
+# Installed with cargo into ~/.cargo/bin: cargo-watch's formula is disabled, and
+# sqlx-cli is pinned to match the sqlx version our projects use (Homebrew ships newer).
+# Format: "<binary> <cargo install args>"
+while read -r bin args; do
+  if command -v "$bin" >/dev/null; then ok "$bin"
+  else cargo install --locked $args && ok "$bin (installed)"; fi
+done <<'TOOLS'
+cargo-watch cargo-watch
+sqlx sqlx-cli --version ^0.8 --no-default-features --features rustls,postgres
+TOOLS
 
 step "Claude Code"
 if command -v claude >/dev/null || [ -x "$HOME/.local/bin/claude" ]; then
