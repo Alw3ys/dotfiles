@@ -47,7 +47,15 @@ if command -v rustup >/dev/null; then
   ok "$(rustc --version)"
 else
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  . "$HOME/.cargo/env"
 fi
+
+step "Cargo tools"
+# Not in Homebrew (cargo-watch's formula is disabled), so install with cargo into ~/.cargo/bin
+for tool in cargo-watch; do
+  if command -v "$tool" >/dev/null; then ok "$tool"
+  else cargo install --locked "$tool" && ok "$tool (installed)"; fi
+done
 
 step "Claude Code"
 if command -v claude >/dev/null || [ -x "$HOME/.local/bin/claude" ]; then
