@@ -43,3 +43,18 @@ alias dup="docker compose up"
 
 # Servers
 alias s="ssh ubuntu@stridee.fit"
+
+# Homebrew: install/uninstall AND record it in ~/dotfiles/Brewfile (committed + pushed)
+DOTFILES="$HOME/dotfiles"
+_dotfiles_commit() {
+    git -C "$DOTFILES" add Brewfile &&
+    git -C "$DOTFILES" commit -q -m "$1" &&
+    { git -C "$DOTFILES" push -q || echo "(committed, push failed — run: git -C ~/dotfiles push)"; }
+}
+# usage: brewadd jq   |   brewadd --cask raycast
+brewadd() {
+    brew install "$@" && brew bundle add --file="$DOTFILES/Brewfile" "$@" && _dotfiles_commit "Add ${*: -1}"
+}
+brewrm() {
+    brew uninstall "$@" && brew bundle remove --file="$DOTFILES/Brewfile" "$@" && _dotfiles_commit "Remove ${*: -1}"
+}

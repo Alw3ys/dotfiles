@@ -6,10 +6,11 @@ for file in ~/.{exports,aliases,extra}; do
 done;
 unset file;
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$HOME/.local/bin:$PATH"
 
-[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+# bash-completion v1 (v2 needs bash 4.2+, macOS ships 3.2)
+[ -r "$HOMEBREW_PREFIX/etc/bash_completion" ] && . "$HOMEBREW_PREFIX/etc/bash_completion"
 
 # Ghostty shell integration
 if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
