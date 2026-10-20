@@ -17,6 +17,3 @@ cask "discord"
 
 # Fonts
 cask "font-jetbrains-mono"
-
-# Java (Android builds)
-cask "temurin@17"

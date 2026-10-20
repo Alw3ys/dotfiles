@@ -20,7 +20,4 @@ fi
 # Rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# Java (Android builds)
-[ -d /Library/Java/JavaVirtualMachines/temurin-17.jdk ] && export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
-
 ulimit -n 10240
