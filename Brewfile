@@ -16,6 +16,8 @@ cask "slack"
 cask "discord"
 cask "tableplus"
 cask "whatsapp"
+cask "spotify"
+cask "tailscale-app"
 
 # Fonts
 cask "font-jetbrains-mono"
