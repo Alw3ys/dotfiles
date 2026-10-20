@@ -1,47 +1,25 @@
 #!/usr/bin/env bash
 
+# Apps
+brew install --cask ghostty
+brew install --cask zed
+brew install --cask docker
+brew install --cask font-jetbrains-mono
+
+# CLI
 brew install stow
-
-brew install cmake
-
-# Probuf
-brew install protobuf
-
-# GPG
-brew install gpg
-
-# Neovim
-brew install neovim
-
-# Python
-brew install python3
-curl -sSL https://install.python-poetry.org | python3 -
-
-# Ruby
-brew install ruby
-
-# Node
-brew install node
-brew install nvm
-brew install oven-sh/bun/bun
-brew install pnpm
-
-npm install -g hueadm
-
-brew install watch
-
-brew install awscli
-brew install --cask aws-vault
-brew install --cask session-manager-plugin
-
-brew install pulumi/tap/pulumi
-
+brew install bash-completion@2
+brew install gh
 brew install jq
 
-# Fonts (used by Zed)
-brew install --cask font-jetbrains-mono
-# Remove outdated versions from the cellar.
-brew cleanup
+# Node (via nvm)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | PROFILE=/dev/null bash
+. "$HOME/.nvm/nvm.sh" && nvm install --lts
 
-# Ruby Installs
-gem install deb-s3
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+
+# Java (Android builds)
+brew install --cask temurin@17
+
+brew cleanup

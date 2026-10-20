@@ -1,49 +1,30 @@
 #!/usr/bin/env bash
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-
-for file in ~/.{exports,aliases,functions,extra}; do
+# Load the shell dotfiles (~/.extra is gitignored: secrets + machine-specific stuff)
+for file in ~/.{exports,aliases,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="/Users/alvaromolina/.local/bin:$PATH"
+[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
-
-export DENO_INSTALL="/Users/alvaromolina/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-
-# Ghostty shell integration for Bash. This must be at the top of your bashrc!
+# Ghostty shell integration
 if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
     builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
 fi
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/alvaromolina/google-cloud-sdk/path.bash.inc' ]; then . '/Users/alvaromolina/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/alvaromolina/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/alvaromolina/google-cloud-sdk/completion.bash.inc'; fi
-
+# Node (nvm)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-# Added by `rbenv init` on Thu Mar  6 11:06:14 CET 2025
-eval "$(rbenv init - --no-rehash bash)"
+# Rust
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-. "/Users/alvaromolina/.deno/env"
+# Java (Android builds)
+[ -d /Library/Java/JavaVirtualMachines/temurin-17.jdk ] && export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
 
-export SMITH_CLI_INSTALL="/Users/alvaromolina/.smith"
-export PATH="$SMITH_CLI_INSTALL/bin:$PATH"
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
 ulimit -n 10240

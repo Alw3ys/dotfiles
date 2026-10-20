@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
 
-# Set default shell to bash
+# Keep bash as the default shell
 chsh -s /bin/bash
 
-# Set default screenshots path.
-SCREENSHOTS_PATH="~/Documents/screenshots"
-mkdir $SCREENSHOTS_PATH
-defaults write com.apple.screencapture location $SCREENSHOTS_PATH
+# Screenshots go to ~/Documents/screenshots
+mkdir -p "$HOME/Documents/screenshots"
+defaults write com.apple.screencapture location "$HOME/Documents/screenshots"
 
-# Install Homebrew
+# Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# sqlx-cli
-cargo install sqlx-cli --no-default-features --features native-tls,postgres
-
-# cargo-deb
-cargo install cargo-deb
+# Packages, then link dotfiles into ~
+"$(dirname "$0")/packages.sh"
+cd "$(dirname "$0")" && stow .

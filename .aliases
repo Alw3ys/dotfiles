@@ -4,27 +4,9 @@
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
-
-#alias aws="docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli"
-alias powershell="docker run --rm -it -v $PWD:/usr/src mcr.microsoft.com/powershell"
-
-# IDEs
-alias webstorm='open -na "WebStorm.app" --args "$@"'
-alias pycharm='open -na "PyCharm CE.app" --args "$@"'
-alias rustrover='open -na "RustRover.app" --args "$@"'
-
-# clients stuff
-alias anythingnew="kubectl get deployments --sort-by=.metadata.creationTimestamp"
-
-# example
-alias d_dosei="$HOME/Documents/dosei/dosei/target/debug/dosei"
 
 # Git
 alias ga="git add"
@@ -35,20 +17,18 @@ alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
 
-function open_repo() {
-    local url=$(git remote get-url origin | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/.git$//')
-    open $url
+open_repo() {
+    open "$(git remote get-url origin | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/.git$//')"
 }
-
 alias opengit='open_repo'
 
 cleanup_branches() {
     echo "The following local branches will be deleted (excluding 'main'):"
     git branch | grep -v "main" | sed 's/^/  /'
-    
+
     echo -e "\nAre you sure you want to delete these branches? (y/N): "
     read -r response
-    
+
     if [[ "$response" =~ ^[Yy]$ ]]; then
         git branch | grep -v "main" | xargs git branch -D
         echo "Branches deleted successfully."
@@ -58,19 +38,8 @@ cleanup_branches() {
 }
 alias cleanupgit='cleanup_branches'
 
-
-# Lights
-alias on="hueadm group 7 on"
-alias off="hueadm group 7 off"
-
-set_brightness_function() {
-  hueadm group 7 =$1%
-}
-alias dimme='set_brightness_function'
-
 # Docker
 alias dup="docker compose up"
 
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias st="ssh ubuntu@stridee.fit"
+# Servers
 alias s="ssh ubuntu@stridee.fit"
