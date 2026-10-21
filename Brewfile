@@ -19,6 +19,7 @@ cask "tableplus"
 cask "whatsapp"
 cask "spotify"
 cask "tailscale-app"
+cask "betterdisplay"
 
 # Fonts
 cask "font-jetbrains-mono"
