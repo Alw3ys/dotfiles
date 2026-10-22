@@ -25,3 +25,5 @@ cask "betterdisplay"
 cask "font-jetbrains-mono"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Build, manage and test your Auth0 integrations from the command line
+brew "auth0/auth0-cli/auth0"
