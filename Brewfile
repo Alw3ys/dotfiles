@@ -31,3 +31,8 @@ brew "auth0/auth0-cli/auth0"
 brew "pulumi/tap/pulumi"
 # Securely store and access AWS credentials in development environments
 brew "aws-vault"
+# Mac App Store command-line interface
+brew "mas"
+
+# Mac App Store (via mas)
+mas "Caffeinated", id: 1362171212
