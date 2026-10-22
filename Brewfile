@@ -29,3 +29,5 @@ brew "awscli"
 brew "auth0/auth0-cli/auth0"
 # Pulumi - Modern Infrastructure as Code. Any cloud, any language 
 brew "pulumi/tap/pulumi"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault"
