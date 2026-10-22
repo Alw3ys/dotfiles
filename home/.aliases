@@ -44,6 +44,11 @@ alias dup="docker compose up"
 # Servers
 alias s="ssh ubuntu@stridee.fit"
 
+# AWS (profiles in ~/.aws/config): `awsdev` opens a shell with dev credentials,
+# `awsdev pulumi preview` runs one command. Same for `awsprod`.
+alias awsdev="aws-vault exec dev --"
+alias awsprod="aws-vault exec prod --"
+
 # Homebrew: install/uninstall AND record it in ~/dotfiles/Brewfile (committed + pushed)
 DOTFILES="$HOME/dotfiles"
 _dotfiles_commit() {
