@@ -27,3 +27,5 @@ cask "font-jetbrains-mono"
 brew "awscli"
 # Build, manage and test your Auth0 integrations from the command line
 brew "auth0/auth0-cli/auth0"
+# Pulumi - Modern Infrastructure as Code. Any cloud, any language 
+brew "pulumi/tap/pulumi"
