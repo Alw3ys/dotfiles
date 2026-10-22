@@ -23,3 +23,5 @@ cask "betterdisplay"
 
 # Fonts
 cask "font-jetbrains-mono"
+# Official Amazon AWS command-line interface
+brew "awscli"
